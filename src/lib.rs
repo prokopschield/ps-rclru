@@ -36,7 +36,7 @@ impl<K: Eq + Hash, V> LRU<K, V> {
         self.map.insert(key, (value, 1));
         self.num_items += 1;
 
-        return self.maybe_gc();
+        self.maybe_gc()
     }
 
     #[inline(always)]
@@ -78,7 +78,7 @@ impl<K: Eq + Hash, V> LRU<K, V> {
             }
         }
 
-        return None;
+        None
     }
 }
 
